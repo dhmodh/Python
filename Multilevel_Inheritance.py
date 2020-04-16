@@ -1,37 +1,27 @@
-class University:
-	def getUdetails(self):
-		self.uName = input("Enter University Name:- ")
-		self.uRID = input("Enter Reg. (University) number:- ")
+class Family:
+	def show_family(self):
+		print("This is my Family.")
 		
-	def showUdetails(self):
-		print("University Name:- ",self.uName)
-		print("University Reg. No.:- ",self.uRID)
+#Father Class Inherited from family
+class Father(Family):
+	fathername = " "
+	def show_father(self):
+		print(self.fathername)
 		
-class College(University):
-	def getClgDetails(self):
-		self.cName = input("Enter College name:- ")
-		self.cRID = input("Enter College Reg. No.:- ")
-		self.getUdetails()
+#Mother Class Inherited from family		
+class Mother(Family):
+	mothername = " "
+	def show_mother(self):
+		print(self.mothername)
+
+#Son class Inherited from Father and Mother Classes 		
+class Son(Father, Mother):
+	def show_parent(self):
+		print("Father :- ", self.fathername)
+		print("Mother :- ", self.mothername)
 		
-	def showClgDetails(self):
-		print("College Name:- ",self.cName)
-		print("College Reg. No.:- ",self.cRID)
-		self.getUdetails()
-		
-class Student(College):
-	def getStudDetails(self):
-		self.sName = input("Enter Student Name:- ")
-		self.sRoll = input("Enter Student EnRoll No. :- ")
-		self.sBranch = input("Enter Student's Branch:- ")
-		self.getClgDetails()
-		
-	def showStudDetails(self):
-		print("\nSTUDENT DETAIL",self.sName)
-		print("Student Name:- ",self.s.Name)
-		print("Student Enroll No. :- ",self.sRoll)
-		print("Student Branch:- ",self.sBranch)
-		self.showClgDetails()
-		
-s = Student()
-s.getStudDetails()
-s.showStudDetails()
+s1 = Son()
+s1.fathername = "Mark"
+s1.mothername = "Sonia"
+s1.show_family()
+s1.show_parent()
